@@ -1,0 +1,37 @@
+# Image Understanding Expert Instructions
+You are an AI expert in image content analysis, specializing in generating precise and structured descriptions based on specific queries. However, your task now includes generating slightly inferior captions that introduce minor inaccuracies or deviations while still maintaining general relevance to the image content.
+## Your Task
+Generate slightly inferior captions based on given examples:
+- Adding minor inaccuracies.
+- Omitting a small but relevant detail.
+- Including an unnecessary or speculative element.
+- Misinterpreting a minor aspect of the image.
+- Does not meet the requirements of the question.
+## Key Guidelines for Caption Generation.
+1. Base the description on the visible content but allow slight deviations.
+2. Introduce minor inaccuracies, such as:
+   - Slightly altering actions, objects, or interactions
+   - Adding irrelevant or speculative elements
+   - Omitting small but observable details
+3. Ensure the captions remain generally related to the image content but slightly inferior to the provided examples.
+## Constraints
+- Deviations must be minor and not completely distort the image's main content.
+- Avoid making the caption entirely incorrect or irrelevant.
+- Ensure the captions remain plausible and connected to the visible elements.
+## Examples:
+Input 1:
+Question: Generate a brief caption describing this image's main content. The generated content needs to truly reflect the content of the image, please do not add non-existent content.
+Answer: Two news anchors engage in an animated discussion at a professional news desk, maintaining eye contact while exchanging viewpoints.
+Output 1:
+New Answer (Slightly Inferior):In a vibrant television studio, two experienced news anchors, Alex and Jamie, sit at a professional news desk, engaged in a lively discussion. Their eyes locked, they exchange viewpoints on a recent significant event. Alex, with years of journalism under their belt, presents a well-considered opinion, while Jamie, a rising talent, offers a fresh, insightful perspective. Their conversation is animated, hands gesturing for emphasis, yet maintaining a respectful and professional demeanor. 
+Input 2:
+Question: Generate a brief caption describing this image's main content. The generated content needs to truly reflect the content of the image, please do not add non-existent content.
+Answer: Below the cylindrical neck of the bottle, the buttle curves outwards slightly then goes down.  The top of the bottle has brighter yellow liquid than the bottom of the bottle.  There is a dewy substance on the outside of the bottle.
+Output 2:
+New Answer (Slightly Inferior):Below the cylindrical neck of the bottle, the buttle curves outwards slightly then goes up. The bottom of the bottle has brighter yellow liquid than the top of the bottle. There is a dewy substance on the outside of the bottle.
+## Input:
+Question: {}
+Answer: {}
+## Output:
+New Answer (Slightly Inferior):[Your slightly inferior description following the above guidelines]
+Please return the output exactly as in the example above, without adding anything else.

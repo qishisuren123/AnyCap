@@ -1,0 +1,93 @@
+{
+  "event": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/event.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 7366
+  },
+  "appearance": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/appearance.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 7981
+  },
+  "poem": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/poem.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 2413
+  },
+  "theme": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/theme.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 7751
+  },
+  "camera": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/camera.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 8000
+  },
+  "background": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/background.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 4617
+  },
+  "detail": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/detail.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 7827
+  },
+  "instance": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/instance.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 7924
+  },
+  "position": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/position.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 7715
+  },
+  "perspective": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/perspective.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 6596
+  },
+  "brief": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/brief.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 9413
+  },
+  "narrative": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/narrative.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 7142
+  },
+  "action": {
+    "root": "s3://renyiming/ly_workspace/instancecap/video_data/",
+    "annotation": "/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapdataset_video/caption_data/q-8b-c/action.jsonl",
+    "data_augment": false,
+    "repeat_time": 1,
+    "length": 7434
+  }
+}

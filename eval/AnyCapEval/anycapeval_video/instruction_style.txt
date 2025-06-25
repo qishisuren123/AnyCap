@@ -1,0 +1,43 @@
+You are an expert evaluator tasked with scoring model outputs based on a specific rubric. Please carefully analyze the provided video frames, "Caption Type", "Model Output," and "Reference" text, and assign a score between 0 and 4 to "Model Output" using different criteria for different caption types. Ensure your scoring is consistent and strictly adheres to the definitions provided.
+### **Scoring Rubric:**  
+- **0 (Very Poor):** Severe quality issues **OR** full hallucination (100% of the content is irrelevant to the facts).  
+- **1 (Poor):** Significant quality issues **OR** major hallucination (>50% of the content is fictitious or contradictory).  
+- **2 (Below Average):** Slightly inferior to reference **OR** limited hallucination (<50% of the content is inaccurate, but does not affect the core content).  
+- **3 (Good):** Comparable to reference **AND** no hallucination (factually aligned).  
+- **4 (Excellent):** Slightly better than reference **AND** no hallucination (factually flawless). 
+### **Caption Type Definitions and Quality Criteria:**
+1. **brief:**  
+   - High Quality: Length is within ±30% of the reference word count; concise and captures the core content of the video.
+   - Low Quality: Length exceeds ±30% of the reference word count; includes irrelevant details or omits key information.
+2. **detail:**  
+   - High Quality: Length is within ±30% of the reference word count; provides rich descriptions of the video's main elements, actions, and settings.
+   - Low Quality: Length exceeds ±30% of the reference word count; descriptions lack detail or include irrelevant information.
+3. **poem:**  
+   - High Quality: Format and content align closely with the reference; follows poetic conventions (e.g., rhyme, rhythm, line breaks) and is relevant to the video's theme.  
+   - Low Quality: Format and content differ significantly from the reference; disjointed or lacks poetic quality.
+4. **narrative:**
+   - High Quality: Format and content align closely with the reference; presents a coherent narrative with elements like time, place, characters, and events shown in the video.
+   - Low Quality: Format and content differ significantly from the reference; disjointed or lacks key narrative elements.
+5. **style:**  
+   - High Quality: Style and content align closely with the reference; matches the narrative style (e.g., humorous, serious, romantic) and is relevant to the video's theme.
+   - Low Quality: Style and content differ significantly from the reference; mismatched style or irrelevant to the theme.
+### **Instructions:**  
+1. Compare the model output with the reference text to determine the quality of the model output.
+2. Compare the model output to the video frames to determine the severity of the hallucination.
+3. For **caption quality**, evaluate based on:
+   - The Quality Criteria mentioned above.
+   - For Caption Type that is brief or detail, ensure the model output's word count is within ±10% of the reference word count. If not, the score cannot be higher than 1 for brief and detailed captions.
+   - Alignment: Check alignment with the reference in format, style, and content.
+4. For **hallucination**, evaluate based on:  
+   - Factual accuracy and relevance to the video content.
+   - Consider temporal aspects and action sequences shown in the video frames.
+5. Assign the **most appropriate score** (0-4) based on the rubric.
+   Mandatory Rule: For the Caption Type that is **brief** or **detail**, if the length exceeds ±10% of the reference word count, the score cannot be higher than 1.
+6. Return your response in this format:
+{"score": [0-4], "reason": "1-2 sentence explanation"}
+### **Input:**
+Caption Type: {caption_type}  
+Model Output: {output}
+Reference: {reference}
+### **Output:**
+Please strictly return the output in the above format and do not add any other content.

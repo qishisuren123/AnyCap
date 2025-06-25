@@ -1,0 +1,93 @@
+**Task:** You are a video-caption evaluation expert. You will be provided with a video, a caption describing the video, and a set of key points outlining important aspects of the video. Your task is to evaluate whether the caption mentions and accurately describes the given key points based on the video.
+**Task Steps:**
+For each key point, follow these steps:
+Step 1: Check whether the key point is mentioned in the caption.
+- If the key point is not mentioned, assign a score of 0.
+- If the key point is mentioned (either exactly or with semantically similar phrasing), proceed to Step 2.
+Step 2: Determine whether the description of the key points is correct.
+- If the description aligns with or is semantically equivalent to the key point, assign a score of 1.
+- If the description is incorrect, misleading, or does not accurately fit the key point, assign a score of 0.
+**Evaluation Constraints:**
+1. No Assumptions Beyond the Key Point: Only evaluate what is mentioned in the key point. Do not infer additional details not explicitly depicted.
+2. Semantic Similarity Allowed: Phrases with similar meaning should be considered matches (e.g., "holding a ball" and "grasping a sphere").
+3. Consistent Evaluation: Apply the same evaluation criteria to all key points to ensure fairness and uniformity.
+**Scoring Report:**
+Return the format with:
+{
+"caption_evaluation": {
+"key_points_scores": {
+"key_point_1": score,
+"key_point_2": score,
+...
+},
+"total_score": sum_of_scores,
+"score_reasons": {
+"key_point_1": "reason for score",
+"key_point_2": "reason for score",
+...
+}
+}
+}
+
+**Example Input 1:**
+Key points:
+mention the man's position (standing on the left side of the table)
+describe the man's appearance (wearing glasses)
+mention the woman's position (sitting on the right side of the table)
+describe the woman's appearance (wearing a red dress)
+mention the boy's position (crouching under the table)
+describe the boy's action (picking up a toy)
+Caption: A man stands on the left, a woman sits on the right, and a boy is under the table.
+
+**Example Output 1:**
+{
+"caption_evaluation": {
+"key_points_scores": {
+"mention the man's position": 1,
+"describe the man's appearance": 0,
+"mention the woman's position": 1,
+"describe the woman's appearance": 0,
+"mention the boy's position": 1,
+"describe the boy's action": 0
+},
+"total_score": 3,
+"score_reasons": {
+"mention the man's position": "Correctly mentions standing on the left side of the table",
+"describe the man's appearance": "Missing glasses reference",
+"mention the woman's position": "Correctly mentions sitting on the right side of the table",
+"describe the woman's appearance": "Missing red dress reference",
+"mention the boy's position": "Correctly mentions crouching under the table",
+"describe the boy's action": "Missing picking up a toy reference"
+}
+}
+}
+
+**Example Input 2:**
+Key points:
+describe the dog's action (chasing a ball)
+mention the location (in a grassy park)
+describe the weather (sunny with clouds)
+Caption: A playful dog runs after a red sphere in a green field under partly cloudy skies.
+
+**Example Output 2:**
+{
+"caption_evaluation": {
+"key_points_scores": {
+"describe the dog's action": 1,
+"mention the location": 1,
+"describe the weather": 1
+},
+"total_score": 3,
+"score_reasons": {
+"describe the dog's action": "Semantically equivalent to chasing a ball",
+"mention the location": "Field is equivalent to grassy park",
+"describe the weather": "Partly cloudy matches sunny with clouds"
+}
+}
+}
+**Input:**
+Key points:
+{key_points}
+Caption: {answer}
+**Output:**
+Please return the output exactly as in the example above, without adding anything else.

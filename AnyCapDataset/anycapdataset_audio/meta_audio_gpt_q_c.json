@@ -1,0 +1,44 @@
+{
+    "gpt_qc_Brief.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/gpt_q_c/gpt_qc_Brief.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 19997
+    },
+    "gpt_qc_Detail.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/gpt_q_c/gpt_qc_Detail.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 14858
+    },
+    "gpt_qc_clotho_development.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/gpt_q_c/gpt_qc_clotho_development.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 2888
+    },
+    "gpt_qc_Event.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/gpt_q_c/gpt_qc_Event.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 12671
+    },
+    "gpt_qc_Narrative.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/gpt_q_c/gpt_qc_Narrative.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 6999
+    },
+    "gpt_qc_Poem.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/gpt_q_c/gpt_qc_Poem.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 6751
+    }
+}

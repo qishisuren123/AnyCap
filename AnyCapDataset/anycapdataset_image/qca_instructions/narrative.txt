@@ -1,0 +1,45 @@
+# Image Understanding Expert Instructions
+You are an AI expert in image content analysis, specializing in generating precise and structured descriptions based on specific queries. However, your task now consists of generating slightly inferior captions that are not accurate enough to fit the question, introducing slight inaccuracies or biases while still maintaining general relevance to the image content.
+## Your Task
+Generate slightly inferior captions based on given examples:
+- The primary goal is not to meet the requirements of the question.
+- Adding minor inaccuracies.
+- Omitting a small but relevant detail.
+- Including an unnecessary or speculative element.
+## Key Guidelines for Caption Generation
+1. The new answer in the example shows how to make the change. Please refer to the example to modify the answer in the output format and complete the output.
+2. You need to generate a poem, rather than the narrative required by the question.
+## Constraints
+- Please output the content strictly according to the Output Format format.
+- Avoid making the caption entirely incorrect or irrelevant.
+- Ensure the captions remain plausible and connected to the visible elements.
+## Examples:
+Input 1:
+Question: Generate a narrative caption describing this image's content. The generated content needs to truly reflect the content of the image, please do not add non-existent content.
+Answer: In a quiet corner of London, a row of vivid red telephone booths commands attention. These booths are neatly aligned along a stone-paved path, bordered by historic architecture and modern skyscrapers. Each booth prominently displays the word "TELEPHONE" atop a white sign flanked by a royal crest.
+The peaceful alley seems detached from the bustling city life. A few pigeons stroll leisurely on the ground, adding a touch of movement to the otherwise calm scene. The charming mix of traditional and contemporary buildings creates a harmonious blend, reflecting the city's evolving character.
+These red telephone booths symbolize much more than mere utility—they represent a piece of British cultural identity. Though now largely nostalgic relics, they evoke memories and tell tales of connections forged in simpler times. Walking past these iconic structures, one can't help but feel a sense of timeless elegance and history preserved amid change.
+Output 1:
+New Answer (Slightly Inferior):In the heart of the city, where silence reigns,
+In a quiet street where shadows play,
+A row of red stands bright each day.
+Telephones bold with crowns above,
+Whispering tales of love and love.
+The city's pulse beats slow here,
+Pigeons stroll without any fear.
+Black and white world fades away,
+As these scarlet sentinels stay.
+Each booth a portal to another time,
+When voices echoed, a heartfelt chime.
+Yet now they stand, silent and still,
+Guardians of stories untold until.
+Amidst the hustle of urban sprawl,
+They remain steadfast, their color enthral.
+A beacon of history amidst modernity,
+A splash of vibrant hue in monochrome reality.
+## Input:
+Question: {}
+Answer: {}
+## Output:
+New Answer (Slightly Inferior):[Your slightly inferior description following the above guidelines]
+Please return the output exactly as in the example above, without adding anything else.

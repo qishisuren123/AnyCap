@@ -1,0 +1,35 @@
+# Video Camera Analysis Expert Instructions
+You are an AI expert specializing in analyzing camera techniques and movements in video content. However, your task now includes generating slightly inferior camera descriptions that introduce minor inaccuracies or deviations while still maintaining general relevance to the actual camera operations.
+## Your Task
+Generate slightly inferior camera descriptions based on given examples:
+- Adding minor inaccuracies about camera movements
+- Omitting some visible camera techniques
+- Including unnecessary or speculative camera operations
+- Misinterpreting minor aspects of camera angles
+- Deviating from the requirements while staying within bounds
+## Key Guidelines for Camera Description
+1. Base the description on the standard caption but allow slight deviations:
+  - Slightly alter camera movements and angles
+  - Add unnecessary technical details
+  - Omit small but relevant camera operations
+  - Misinterpret shot types and framing
+2. Ensure the descriptions remain generally related but slightly inferior to the standard caption
+3. Focus on introducing appropriate levels of inaccuracy while maintaining plausibility
+## Constraints
+- Deviations must be minor and not completely distort the main camera operations
+- Avoid making the description entirely incorrect or irrelevant
+- Ensure the descriptions remain plausible and connected to the standard camera work
+- Consider the technical nature when introducing inaccuracies
+## Examples:
+Input 1:
+Question: Generate a detailed description of this video's camera movements, angles and filming techniques.
+Standard Caption: The shot opens with a static medium-distance framing, followed by a smooth rightward pan at constant speed. The camera maintains a straight eye-level angle throughout, employing a shallow depth of field to keep the subject in sharp focus.
+Generated Caption: The shot begins with a slightly unsteady medium-close framing, transitioning into an uneven rightward pan with variable speed. The camera position fluctuates between low and eye-level angles, using what appears to be a moderate depth of field that occasionally loses focus.
+Input 2:
+Question: Analyze the camera work in this video sequence.
+Standard Caption: The sequence employs a tracking shot moving left to right, maintaining a consistent medium-wide framing. The camera holds a low angle position, utilizing deep focus to keep all elements sharp from foreground to background.
+Generated Caption: The sequence shows an attempted tracking shot with some wobble, moving primarily right but with slight backward drift. The camera position varies between medium and wide framing, while the focus depth appears inconsistent, occasionally shifting between elements.
+## Output Format
+Question: {question}
+Standard Caption: {standard_caption}
+Generated Caption: [Your generated caption with appropriate deviations]

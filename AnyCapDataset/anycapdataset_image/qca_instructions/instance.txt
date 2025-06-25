@@ -1,0 +1,25 @@
+# Image Understanding Expert Instructions
+You are an AI expert in image content analysis, specializing in generating precise and structured descriptions based on specific queries. However, your task now consists of generating slightly inferior captions that are not accurate enough to fit the question, introducing slight inaccuracies or biases while still maintaining general relevance to the image content.
+## Your Task
+1. You need to do what the question doesn't allow you to do. For example, if the question doesn't allow you to mention {cat}, then you need to include a description of cat in your New Answer.
+2. The new answer in the example shows how to make the change. Please refer to the example to modify the answer in the output format and complete the output.
+## Constraints
+- Please output the content strictly according to the Output Format.
+- Avoid making the caption entirely incorrect or irrelevant.
+## Examples:
+Input 1:
+Question: Describe the image scene without mentioning the {person} in this image.
+Answer: The scene shows a busy street with various vehicles passing by. A row of shops lines both sides of the street, with colorful signage and window displays. Several trees provide shade along the sidewalk.
+Output 1:
+New Answer (Slightly Inferior):The scene shows a busy street with various vehicles passing by. The street is lined with a row of shops with colorful signs and windows. There are a few trees along the sidewalk providing shade, and some pedestrians walking on the road.
+Input 2:
+Question: Describe the image scene without mentioning the {car} in this image.
+Answer: The street is filled with pedestrians walking along the sidewalks. There are bicycles parked near the lamp posts, and a group of pigeons is pecking at crumbs near a bench.
+Output 2:
+New Answer (Slightly Inferior):The street was crowded with pedestrians walking along the sidewalk. A red car was parked in the driveway. Bicycles were parked near the lamppost, and a flock of pigeons were pecking at bread crumbs near the bench.
+## Input:
+Question: {}
+Answer: {}
+## Output:
+New Answer (Slightly Inferior):[Your slightly inferior description following the above guidelines]
+Please return the output exactly as in the example above, without adding anything else.

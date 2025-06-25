@@ -1,0 +1,37 @@
+{
+    "q_c_a_org_Brief.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/q_c_a_org/q_c_a_org_Brief.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 19997
+    },
+    "q_c_a_org_Detail.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/q_c_a_org/q_c_a_org_Detail.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 14858
+    },
+    "q_c_a_org_Event.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/q_c_a_org/q_c_a_org_Event.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 12671
+    },
+    "q_c_a_org_Narrative.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/q_c_a_org/q_c_a_org_Narrative.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 6999
+    },
+    "q_c_a_org_Poem.jsonl": {
+        "root": "audio_submit_code/anycapdataset_audio/audio_data",
+        "annotation": "audio_submit_code/anycapdataset_audio/caption_data/q_c_a_org/q_c_a_org_Poem.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 6751
+    }
+}

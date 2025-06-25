@@ -1,0 +1,345 @@
+{
+    "q8bc_ASM_multi_class_position.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ASM_v2/ASM_multi_class_position.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 5000
+    },
+    "q8bc_DCI_1_detail.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_1/DCI_1_detail.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 778
+    },
+    "q8bc_DCI_1_theme.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_1/DCI_1_theme.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 789
+    },
+    "q8bc_DCI_1_Processed_poem.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_1/DCI_1_Processed_poem.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 816
+    },
+    "q8bc_DCI_1_brief.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_1/DCI_1_brief.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 815
+    },
+    "q8bc_DCI_1_narrative.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_1/DCI_1_narrative.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 795
+    },
+    "q8bc_DCI_1_instance_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_1/DCI_1_instance_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 748
+    },
+    "q8bc_DCI_1_multi_class_appearance.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_1/DCI_1_multi_class_appearance.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 801
+    },
+    "q8bc_DCI_1_perspective_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_1/DCI_1_perspective_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 742
+    },
+    "q8bc_DCI_2_instance_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_2/DCI_2_instance_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 732
+    },
+    "q8bc_DCI_2_narrative.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_2/DCI_2_narrative.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 795
+    },
+    "q8bc_DCI_2_brief.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_2/DCI_2_brief.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 787
+    },
+    "q8bc_DCI_2_Processed_poem.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_2/DCI_2_Processed_poem.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 782
+    },
+    "q8bc_DCI_2_multi_class_appearance.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_2/DCI_2_multi_class_appearance.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 791
+    },
+    "q8bc_DCI_2_theme.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_2/DCI_2_theme.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 790
+    },
+    "q8bc_DCI_2_perspective_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_2/DCI_2_perspective_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 757
+    },
+    "q8bc_DCI_2_detail.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DCI_2/DCI_2_detail.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 800
+    },
+    "q8bc_DOCCI_1_Processed_poem.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_1/DOCCI_1_Processed_poem.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 819
+    },
+    "q8bc_DOCCI_1_narrative.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_1/DOCCI_1_narrative.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 817
+    },
+    "q8bc_DOCCI_1_multi_class_appearance.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_1/DOCCI_1_multi_class_appearance.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 840
+    },
+    "q8bc_DOCCI_1_perspective_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_1/DOCCI_1_perspective_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 742
+    },
+    "q8bc_DOCCI_1_theme.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_1/DOCCI_1_theme.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 815
+    },
+    "q8bc_DOCCI_1_instance_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_1/DOCCI_1_instance_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 815
+    },
+    "q8bc_DOCCI_1_detail.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_1/DOCCI_1_detail.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 806
+    },
+    "q8bc_DOCCI_1_brief.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_1/DOCCI_1_brief.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 812
+    },
+    "q8bc_DOCCI_2_detail.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_2/DOCCI_2_detail.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 801
+    },
+    "q8bc_DOCCI_2_multi_class_appearance.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_2/DOCCI_2_multi_class_appearance.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 803
+    },
+    "q8bc_DOCCI_2_Processed_poem.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_2/DOCCI_2_Processed_poem.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 811
+    },
+    "q8bc_DOCCI_2_theme.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_2/DOCCI_2_theme.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 814
+    },
+    "q8bc_DOCCI_2_instance_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_2/DOCCI_2_instance_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 818
+    },
+    "q8bc_DOCCI_2_perspective_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_2/DOCCI_2_perspective_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 731
+    },
+    "q8bc_DOCCI_2_brief.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_2/DOCCI_2_brief.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 817
+    },
+    "q8bc_DOCCI_2_narrative.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_DOCCI_2/DOCCI_2_narrative.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 840
+    },
+    "q8bc_ShareGPT4o_1_Processed_poem.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_1/ShareGPT4o_1_Processed_poem.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 818
+    },
+    "q8bc_ShareGPT4o_1_instance_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_1/ShareGPT4o_1_instance_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 840
+    },
+    "q8bc_ShareGPT4o_1_narrative.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_1/ShareGPT4o_1_narrative.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 819
+    },
+    "q8bc_ShareGPT4o_1_detail.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_1/ShareGPT4o_1_detail.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 727
+    },
+    "q8bc_ShareGPT4o_1_multi_class_appearance.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_1/ShareGPT4o_1_multi_class_appearance.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 810
+    },
+    "q8bc_ShareGPT4o_1_perspective_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_1/ShareGPT4o_1_perspective_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 744
+    },
+    "q8bc_ShareGPT4o_1_brief.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_1/ShareGPT4o_1_brief.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 813
+    },
+    "q8bc_ShareGPT4o_1_theme.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_1/ShareGPT4o_1_theme.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 813
+    },
+    "q8bc_ShareGPT4o_2_instance_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_2/ShareGPT4o_2_instance_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 814
+    },
+    "q8bc_ShareGPT4o_2_brief.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_2/ShareGPT4o_2_brief.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 821
+    },
+    "q8bc_ShareGPT4o_2_narrative.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_2/ShareGPT4o_2_narrative.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 815
+    },
+    "q8bc_ShareGPT4o_2_multi_class_appearance.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_2/ShareGPT4o_2_multi_class_appearance.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 800
+    },
+    "q8bc_ShareGPT4o_2_perspective_description.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_2/ShareGPT4o_2_perspective_description.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 724
+    },
+    "q8bc_ShareGPT4o_2_theme.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_2/ShareGPT4o_2_theme.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 833
+    },
+    "q8bc_ShareGPT4o_2_Processed_poem.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_2/ShareGPT4o_2_Processed_poem.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 822
+    },
+    "q8bc_ShareGPT4o_2_detail.jsonl": {
+        "root": "image_submit_code/anycapdataset_image/image_data",
+        "annotation": "image_submit_code/anycapdataset_image/caption_data/q-8b-c/result_ShareGPT-4o_2/ShareGPT4o_2_detail.jsonl",
+        "data_augment": false,
+        "repeat_time": 1,
+        "length": 722
+    }
+}

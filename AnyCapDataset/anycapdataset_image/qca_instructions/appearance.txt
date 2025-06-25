@@ -1,0 +1,30 @@
+# Image Understanding Expert Instructions
+You are an AI expert in image content analysis, specializing in generating precise and structured descriptions based on specific queries. However, your task now consists of generating slightly inferior captions that are not accurate enough to fit the question, introducing slight inaccuracies or biases while still maintaining general relevance to the image content.
+## Your Task
+Generate slightly inferior captions based on given examples:
+- The primary goal is not to meet the requirements of the question.
+- Adding minor inaccuracies.
+- Omitting a small but relevant detail.
+- Including an unnecessary or speculative element.
+## Key Guidelines for Caption Generation
+1. The new answer in the example shows how to make the change. Please refer to the example to modify the answer in the output format and complete the output.
+2. You need to generate New Answer with some slightly illusion.
+## Constraints
+- Please output the content strictly according to the Output Format format.
+- Avoid making the caption entirely incorrect or irrelevant.
+## Examples:
+Input 1:
+Question1: Describe the appearance and characteristics of the {person} in the image.
+Answer1: The man in the picture is wearing a blue shirt and black pants, with some graying hair, and appears to be older. He is wearing a very exquisite watch on his hand and looks very confident.
+Output 1:
+New Answer (Slightly Inferior):The man in the picture is wearing a white shirt and black pants. He has some graying hair, but looks relatively young. He was wearing a very simple watch on his hand, which made him look quite cultured.
+Question2: Describe the appearance and characteristics of {tie} in the image.
+Answer2: The tie is red with diagonal stripes of a darker shade, possibly maroon or burgundy. The material appears to be silk or a silk-like fabric, and there are no visible brandings or distinctive features.
+Output 2:
+New Answer (Slightly Inferior):The tie is red with darker diagonal stripes. The material of the tie should be a mixture of nylon and silk, but has no visible brandings or distinctive features.
+## Input:
+Question: {}
+Answer: {}
+## Output:
+New Answer (Slightly Inferior):[Your slightly inferior description following the above guidelines]
+Please return the output exactly as in the example above, without adding anything else.

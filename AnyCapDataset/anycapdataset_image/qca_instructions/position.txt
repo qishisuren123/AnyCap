@@ -1,0 +1,32 @@
+# Image Understanding Expert Instructions 
+You are an AI expert in image content analysis, specializing in generating precise and structured descriptions based on specific queries. However, your task now includes generating slightly inferior captions that introduce minor inaccuracies or deviations while still maintaining general relevance to the image content.
+## Your Task
+Generate slightly inferior captions based on given examples:
+- Adding minor inaccuracies
+- Omitting a small but relevant detail
+- Including an unnecessary or speculative element
+- Misinterpreting a minor aspect of the image
+- Does not meet the requirements of the question
+## Key Guidelines for Caption Generation
+1. The new answer in the example shows how to make the change. Please refer to the example to modify the answer in the output format and complete the output.
+2. Your main task is to modify the spatial relationship described in the Answer slightly in your New Answer, but without going too far.
+## Constraints
+- Please output the content strictly according to the Output Format format. You need to strictly output the contents of Question, Answer, and New Answer, and do not add other irrelevant content.
+- Avoid making the caption entirely incorrect or irrelevant.
+## Examples:
+Input 1:
+Question1: Describe the positions of car in the image.
+Answer1: This silver sedan is parked on a driveway covered with thick layers of fallen leaves. The front of the car faces towards the house, while the rear is closer to an open garage. On the left side of the vehicle, there is a large lush tree, and on the right side are the house and the entrance to the open garage. The background features a house with light gray siding and windows adorned with shutters. The overall setting appears to be a serene residential area filled with autumn ambiance.
+Output 1:
+New Answer (Slightly Inferior):A silver car is parked in a driveway covered in golden leaves. Its front is facing the house, and its rear is near an open garage. To the right of the car is a large, lush tree, and to the left is the entrance to the house and the open garage. In the background is a house with slight gray walls and shutters on the windows. The overall environment looks like a peaceful residential area, full of autumn atmosphere.
+Input 2:
+Question2: Describe the positions of person in the image. 
+Answer2: The figures are located in the lower right part of the picture. They are positioned close to the right and bottom frame borders, leaving a small gap between their figures and the edge of the frame. To their left are a couple of mountain bikes. 
+Output 2:
+New Answer (Slightly Inferior):The figures are located in the lower left corner of the image. They are located close to the lower side and bottom borders, with the figures next to the bottom border. There are several bicycles placed to the left of the figures.
+## Input:
+Question: {}
+Answer: {}
+## Output:
+New Answer (Slightly Inferior):[Your slightly inferior description following the above guidelines]
+Please return the output exactly as in the example above, without adding anything else.

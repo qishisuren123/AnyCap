@@ -1,0 +1,29 @@
+**Task:** You are a audio-caption evaluation expert. You will be provided with two captions describing the audio, and a set of key points outlining important aspects of the audio. Your task is to evaluate whether each caption mentions and accurately describes the given key points.
+**Task Steps: **
+For each key point, follow these steps:
+Step 1: Check whether the key point is mentioned in each caption.
+- If the key point is not mentioned, assign a score of 0.
+- If the key point is mentioned, proceed to Step 2.
+Step 2: Determine whether the description of the key points is correct.
+- If the description aligns with the key point, assign a score of 1.
+- If the description is incorrect, misleading, or does not accurately fit the key point, assign a score of 0.
+Once all key points have been evaluated, calculate the total score for each caption based on the sum of individual key point scores.
+** Evaluation Constraints:** 
+1. No Assumptions Beyond the Key Point: Only evaluate what is mentioned in the key point. Do not infer additional details not explicitly depicted.
+2. Semantic Similarity Allowed: Phrases with similar meaning should be considered matches (e.g., "holding a ball" and "grasping a sphere").
+3. Consistent Evaluation: Apply the same evaluation criteria to all key points to ensure fairness and uniformity.
+**Scoring Report:** Return the format with:
+**Example Input:**
+Key points:
+mention the woman speaking
+mention the pump operating
+mention the child speaking in the background
+Caption: A woman is talking while a machine runs in the background.
+**Expected Output:**
+{"caption_evaluation": {"key_points_scores": {"mention the woman speaking": 1,"mention the pump operating": 1,"mention the child speaking": 0},"total_score": 2,"score_reasons": {"mention the woman speaking": "Correctly mentions woman talking","mention the pump operating": "Correctly references machine running (pump)","mention the child speaking": "Missing child speaking in background"}}}
+**Input:**
+Key points:
+{key_points}
+Caption: {answer}
+**Output:**
+Please return the output exactly as in the example above, without adding anything else.

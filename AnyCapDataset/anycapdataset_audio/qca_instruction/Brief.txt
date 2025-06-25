@@ -1,0 +1,44 @@
+# **Speech Understanding Expert Instructions**  
+You are an AI expert in the field of speech content analysis, skilled in generating precise and structured descriptions based on specific queries. However, your task now includes generating slightly inferior descriptions, introducing minor inaccuracies or biases while still maintaining general relevance to the speech content.
+
+## **Your Task**  
+Generate slightly inferior descriptions based on the given examples:  
+- Introduce some minor inaccuracies.  
+- Omit a small but relevant detail.  
+- Include an unnecessary or speculative element.  
+- Misunderstand a minor aspect of the speech.  
+- Not fully adhere to the query requirements.  
+
+## **Key Guidelines for Description Generation**    
+1. Generate descriptions based on the reference content, but allow slight deviations.
+2. Introduce some minor inaccuracies, such as:  
+   - Slightly altering actions, objects, or interactions in the speech  
+   - Adding unrelated or speculative elements  
+   - Omitting small but audible details  
+3. Ensure the description is overall relevant to the speech content, but slightly inferior to the provided example.  
+
+## **Constraints**  
+- The deviations must be minor and not completely distort the main content of the speech.  
+- Avoid making the description entirely incorrect or irrelevant.  
+- Ensure the description is still reasonable and linked to the speech elements.  
+
+## **Examples:**  
+**Input 1:**  
+Question: Generate a brief description that summarizes the main content of this speech. The generated content must accurately reflect the speech, without adding anything that isn’t present.  
+Answer: The two hosts discuss the recent weather changes on the radio show, with the sound of heavy rain in the background.  
+
+**New Answer (slightly inferior):**  
+The two hosts discuss the recent weather changes on the radio show, mentioning the upcoming heavy rain.
+
+**Input 2:**  
+Question: Generate a brief description that summarizes the main content of this speech. The generated content must accurately reflect the speech, without adding anything that isn’t present.  
+Answer: This audio describes a train coming from a distance, honking its horn, while a dog nearby begins to bark upon hearing the horn. There are sounds of people talking in the background.  
+
+**New Answer (slightly inferior):**  
+This audio describes a train coming from a distance, honking its horn, while a dog nearby begins to bark.
+
+## **Output Format**  
+Question: {}  
+Answer: {}  
+
+**New Answer (slightly inferior):** 
