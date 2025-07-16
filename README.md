@@ -141,11 +141,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 # AnyCap Project: A Unified Framework, Dataset, and Benchmark for Controllable Omni-modal Captioning
 
 <p align="center">
-    <img src="assets/anycap_overview.png" width="500"/>
+    <img src="assets/anycap_overview.jpg" width="500"/>
 </p>
 
 <p align="center">
-    🤗 [Model Weights](https://huggingface.co/qishisuren/AnyCapModel)  |  📊 [AnyCapEval Benchmark](https://huggingface.co/datasets/qishisuren/AnyCapEval)  |  📝 [Paper](https://arxiv.org/abs/你的arxiv编号)
+    🤗 <a href="https://huggingface.co/qishisuren/AnyCapModel">Model Weights</a> &nbsp;|&nbsp; 📊 <a href="https://huggingface.co/datasets/qishisuren/AnyCapEval">AnyCapEval Benchmark</a> &nbsp;|&nbsp; 📝 <a href="https://arxiv.org/abs/你的arxiv编号">Paper</a> &nbsp;|&nbsp; 📚 <a href="https://github.com/qishisuren123/AnyCap">Code</a>
 </p>
 
 ---
@@ -166,15 +166,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [x] AnyCapEval benchmark available
 - [x] Pretrained model weights released
 - [ ] Training dataset (AnyCapDataset) to be open-sourced soon
-
----
-
-## 🗂️ Resources
-
-- **Huggingface Model**: [AnyCapModel](https://huggingface.co/qishisuren/AnyCapModel)
-- **Benchmark Dataset**: [AnyCapEval](https://huggingface.co/datasets/qishisuren/AnyCapEval)
-- **Technical Report / Paper**: [arXiv](https://arxiv.org/abs/你的arxiv编号)
-- **Demo**: [Demo Page](https://yourdemo.link)
 
 ---
 
