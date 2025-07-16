@@ -158,16 +158,16 @@ def main():
                       default="https://boyuerichdata.chatgptten.com/v1/chat/completions",
                       help='OpenAI API base URL')
     parser.add_argument('--api_key', type=str, 
-                      default='sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl',
+                      default='',
                       help='OpenAI API key')
     parser.add_argument('--model', type=str, default="gpt-4o-2024-08-06",
                       help='Model name to use')
     
     # Data path parameters
     parser.add_argument('--video-dir', type=str,
-                        default='/mnt/petrelfs/renyiming/ly_workspace/video_benchs/VidCapBench/videos',
+                        default='/VidCapBench/videos',
                         help='Directory containing video files')
-    parser.add_argument('--output-dir', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/vidcapbench/output',
+    parser.add_argument('--output-dir', type=str, default='vidcapbench/output',
                         help='Directory to save output files')
     parser.add_argument('--output-name', type=str, default='gpt-4o-2024-08-06.jsonl',
                         help='Directory to save output files')

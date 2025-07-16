@@ -301,7 +301,7 @@ def process_data(args):
                 type_restriction = 'content'
 
                 data2 = data.copy()
-                data2['model_response_content'] = response
+                data2['model_response_content'] = response[0]
                 outfile2_content.write(json.dumps(data2, ensure_ascii=False) + '\n')
                 outfile2_content.flush()
 
@@ -309,7 +309,7 @@ def process_data(args):
                 type_restriction = 'style'
 
                 data2 = data.copy()
-                data2['model_response_style'] = response
+                data2['model_response_style'] = response[0]
                 outfile2_style.write(json.dumps(data2, ensure_ascii=False) + '\n')
                 outfile2_style.flush()
             
@@ -321,24 +321,26 @@ def process_data(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # Variable parameters
-    parser.add_argument('--checkpoint', type=str, default='/mnt/petrelfs/renyiming/model/InternVL2/internvl_chat_audio/work_dirs/internvl_chat_v3_0/internvl3_2b_221_221_221',
-                       help='Second model checkpoint path')
-    parser.add_argument('--init_responses_path', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_content.jsonl',
+
+
+    parser.add_argument('--checkpoint', type=str, default='path/to/ACM/model/checkpoint',
+                       help='ACM model checkpoint path')
+    parser.add_argument('--init_responses_path', type=str, default='path/to/base/model/output.jsonl',
                        help='Path to the JSONL file containing pregenerated responses')
-    parser.add_argument('--output_path_content', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_content_1.jsonl',
-                       help='Path for aligned model content outputs')
-    parser.add_argument('--output_path_style', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_style_1.jsonl',
-                       help='Path for aligned model non-content outputs')
-    parser.add_argument("--merged-output", type=str,
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/merged_results.jsonl',
-                       help="Path for merged and sorted output file")
+    parser.add_argument('--output_path_content', type=str, default='path/to/output/content.jsonl',
+                       help='Path for content-related outputs JSONL')
+    parser.add_argument('--output_path_style', type=str, default='/path/to/output/style.jsonl',
+                       help='Path for style-related outputs JSONL')
+    parser.add_argument("--merged_output", type=str,
+                       default='/path/to/output/merged_results.jsonl',
+                       help="Path for merged output JSONL file")
     # Fixed parameters
     parser.add_argument('--data_path', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/anycapeval_video_ref.jsonl',
+                       default='/path/to/anycapeval_video_ref.jsonl',
                        help='Path to the JSONL data file')
     parser.add_argument('--video_dir', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/video_datas',
-                       help='Directory containing the videos')
+                       default='path/to/test/video/directory',
+                       help='Directory containing videos files')
     
 
     parser.add_argument("--num-beams", type=int, default=1, help="Number of beams for beam search")

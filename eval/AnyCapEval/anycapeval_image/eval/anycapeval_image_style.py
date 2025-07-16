@@ -15,19 +15,19 @@ def parse_arguments():
     # API configuration parameters
     parser.add_argument('--base_url', type=str, default="https://boyuerichdata.chatgptten.com/v1/chat/completions",
                        help='API base URL')
-    parser.add_argument('--api_key', type=str, default="sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl",
+    parser.add_argument('--api_key', type=str, default="your/api/key",
                        help='API key')
     parser.add_argument('--model', type=str, default="gpt-4o-2024-08-06",
                        help='Model name to use')
     
     # Data path parameters
-    parser.add_argument('--data_path', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/code_test/temp_style.jsonl',
+    parser.add_argument('--data_path', type=str, default='/path/to/style/model_results.jsonl',
                        help='Original model results file path')
-    parser.add_argument('--style_template_path', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/instruction_style.txt',
+    parser.add_argument('--style_template_path', type=str, default='/path/to/instruction_style.txt',
                        help='Style evaluation prompt template file path')
-    parser.add_argument('--image_dir', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/test_image_data',
-                       help='Image files directory')
-    parser.add_argument('--output_path', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/code_test/eval_style.jsonl',
+    parser.add_argument('--image_dir', type=str, default='path/to/test/image/directory',
+                       help='Directory containing image files')
+    parser.add_argument('--output_path', type=str, default='/path/to/instruction_style.txt',
                        help='Evaluation results output file path')
     
     # Processing parameters

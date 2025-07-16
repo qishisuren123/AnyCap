@@ -9,35 +9,34 @@ import io
 from typing import List, Dict, Any
 
 def parse_arguments():
-    """Parse command line arguments"""
-    parser = argparse.ArgumentParser(description="GPT-4o模型生成初始caption(图片模态)")
+    parser = argparse.ArgumentParser()
     
     # API configuration parameters
     parser.add_argument('--base_url', type=str, 
                         default="https://boyuerichdata.chatgptten.com/v1/chat/completions",
                         help='OpenAI API base URL')
     parser.add_argument('--api_key', type=str, 
-                        default="sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl",
+                        default="your/api/key",
                         help='OpenAI API key')
     parser.add_argument('--model', type=str, default="gpt-4o-2024-08-06",
                         help='Model name to use')
     
     # Data path parameters
     parser.add_argument('--data_path', type=str, 
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/anycapeval_image_ref.jsonl',
+                       default='/path/to/anycapeval_image_ref.jsonl',
                        help='Path to the JSONL data file')
     parser.add_argument('--image_dir', type=str, 
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/QAC/test_QC/test_image',
-                       help='Directory containing the images')
+                       default='path/to/test/image/directory',
+                       help='Directory containing the image files')
     parser.add_argument('--output_path_content', type=str, 
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/temp_content_2.jsonl',
+                       default='/path/to/output/temp_content.jsonl',
                        help='Path for content-related outputs')
     parser.add_argument('--output_path_style', type=str, 
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/temp_style_2.jsonl',
-                       help='Path for non-content-related outputs')
+                       default='/path/to/output/temp_style.jsonl',
+                       help='Path for style-related outputs')
     parser.add_argument("--merged-output", type=str,
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/merged_results_1.jsonl',
-                       help="Path for merged and sorted output file")
+                       default='/path/to/output/merged_results.jsonl',
+                       help="Path for merged output file")
     
     # Other parameters
     parser.add_argument('--max_tokens', type=int, default=2000,
@@ -106,13 +105,11 @@ def is_id_exists(file_path: str, id: int) -> bool:
     return False
 
 def process_data(args):
-    """Process data and perform image analysis"""
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {args.api_key}"  
     }
     
-    # 定义内容类和非内容类限制
     content_restriction = ['perspective', 'multi_class_position', 'multi_class_appearance', 'instance']
     style_restriction = ['brief', 'detail', 'narrative', 'poem', 'theme']
     
@@ -129,7 +126,6 @@ def process_data(args):
             restriction = data['restriction'][0] if 'restriction' in data else 'detail'
             id = data.get('id')
             
-            # 检查id是否已经存在
             if (os.path.exists(args.output_path_content) and is_id_exists(args.output_path_content, id)) or \
                (os.path.exists(args.output_path_style) and is_id_exists(args.output_path_style, id)):
                 print(f"ID {id} already exists. Skipping...")
@@ -170,7 +166,6 @@ def process_data(args):
                     outfile_style.flush()
 
 def merge_and_sort_outputs(content_file: str, style_file: str, output_file: str):
-    """Merge two JSONL files and sort by 'id' in ascending order"""
     all_data = []
     
     # Read content file

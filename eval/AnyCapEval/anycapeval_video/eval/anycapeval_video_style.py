@@ -23,27 +23,27 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Video description style evaluation tool')
     
     # API configuration parameters
-    parser.add_argument('--base_url', type=str, default="",
+    parser.add_argument('--base_url', type=str, default="https://boyuerichdata.chatgptten.com/v1/chat/completions",
                         help='OpenAI API base URL')
-    parser.add_argument('--api_key', type=str, default="",
+    parser.add_argument('--api_key', type=str, default="your/api/key",
                         help='OpenAI API key')
     parser.add_argument('--model', type=str, default="gpt-4o-2024-08-06",
                         help='Model name to use')
     
     # Data path parameters (to be changed)
     parser.add_argument('--data_path', type=str, 
-                        default='',
+                        default='/path/to/style/model_results.jsonl',
                         help='Original model results file path')
     parser.add_argument('--output_path', type=str, 
-                        default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/code_test/eval_style.jsonl',
+                        default='/path/to/instruction_style.txt',
                         help='Evaluation results output file path')
     # Data path parameters (fixed)
-    parser.add_argument('--content_template_path', type=str, 
-                        default='',
+    parser.add_argument('--style_template_path', type=str, 
+                        default='/path/to/instruction_style.txt',
                         help='Style evaluation prompt template file path')
     parser.add_argument('--video_dir', type=str, 
-                        default='',
-                        help='Video files directory')
+                        default='path/to/test/video/directory',
+                        help='Directory containing video files')
     
     # Other parameters
     parser.add_argument('--max_retries', type=int, default=5,
@@ -361,7 +361,7 @@ def process_evaluation_batch(args):
     client = create_client(args.base_url, args.api_key)    
     os.makedirs(os.path.dirname(args.output_path), exist_ok=True)
     
-    with open(args.content_template_path, 'r', encoding='utf-8') as file:
+    with open(args.style_template_path, 'r', encoding='utf-8') as file:
         prompt_template = file.read()
     
     with open(args.data_path, 'r', encoding='utf-8') as file:

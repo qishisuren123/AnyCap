@@ -215,7 +215,7 @@ def cal_cate_correctness(pred_answer_path, pred_correct_path, avg_token_num):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--caption_path", type=str, default="/mnt/petrelfs/renyiming/ly_workspace/submit_code/vidcapbench/output", help="Path to the captions JSONL file.")
+    parser.add_argument("--caption_path", type=str, default="", help="Path to the captions JSONL file.")
     parser.add_argument("--qa_path", type=str, default="./VidCapBench-AE_QA.jsonl", help="Path to the QA pairs JSONL file.")
 
     args = parser.parse_args()

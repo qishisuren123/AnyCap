@@ -246,14 +246,14 @@ def process_data(args):
                 if restriction in content_restriction:
                     type_restriction = 'content'
                     data_out = data.copy()
-                    data_out['model_response_content'] = response
+                    data_out['model_response_content'] = response[0]
                     outfile_content.write(json.dumps(data_out, ensure_ascii=False) + '\n')
                     outfile_content.flush()
 
                 elif restriction in style_restriction:
                     type_restriction = 'style'
                     data_out = data.copy()
-                    data_out['model_response_style'] = response
+                    data_out['model_response_style'] = response[0]
                     outfile_style.write(json.dumps(data_out, ensure_ascii=False) + '\n')
                     outfile_style.flush()
                 
@@ -269,24 +269,24 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # Variable parameters
     parser.add_argument('--checkpoint', type=str, 
-                       default='/mnt/petrelfs/share_data/wangweiyun/share_internvl/InternVL2_5-8B/',
+                       default='path/to/InternVL/model/checkpoint',
                        help='Model checkpoint path')
     parser.add_argument('--output_path_content', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_content.jsonl',
+                       default='path/to/output/content.jsonl',
                        help='Path for model content outputs')
     parser.add_argument('--output_path_style', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_style.jsonl',
-                       help='Path for model non-content outputs')
-    parser.add_argument("--merged-output", type=str,
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/merged_results.jsonl',
-                       help="Path for merged and sorted output file")
+                       default='path/to/output/style.jsonl',
+                       help='Path for model style outputs')
+    parser.add_argument("--merged_output", type=str,
+                       default='path/to/output/merged_results.jsonl',
+                       help="Path for merged output file")
                        
     # Fixed parameters  
     parser.add_argument('--data_path', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/anycapeval_video_ref.jsonl',
+                       default='path/to/data/anycapeval_video_ref.jsonl',
                        help='Path to the JSONL data file')
     parser.add_argument('--video_dir', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/video_datas',
+                       default='path/to/test/video/directory',
                        help='Directory containing the videos')
 
     parser.add_argument("--num-beams", type=int, default=1, help="Number of beams for beam search")

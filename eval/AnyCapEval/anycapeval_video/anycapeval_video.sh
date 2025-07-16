@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set base paths
-BASE_DIR="/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video"
-SCRIPT_DIR="/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/eval"  # Please replace with actual script directory
+BASE_DIR="/anycapeval_video"
+SCRIPT_DIR="/anycapeval_video/eval"  # Please replace with actual script directory
 OUTPUT_DIR="${BASE_DIR}/output"
 
 EXP_ID="code_test"  
@@ -12,8 +12,8 @@ OUTPUT_FOLDER="${OUTPUT_DIR}/${EXP_ID}/"
 mkdir -p ${OUTPUT_FOLDER}
 
 # Set output paths
-OUTPUT_PATH_CONTENT="/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_content.jsonl"
-OUTPUT_PATH_STYLE="/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_style.jsonl"
+OUTPUT_PATH_CONTENT="/anycapeval_video/output/temp_content.jsonl"
+OUTPUT_PATH_STYLE="/anycapeval_video/output/temp_style.jsonl"
 
 # Set evaluation result paths
 EVAL_CONTENT="${OUTPUT_FOLDER}/eval_content.jsonl"
@@ -21,7 +21,7 @@ EVAL_STYLE="${OUTPUT_FOLDER}/eval_style.jsonl"
 
 # API configuration
 API_BASE_URL="https://boyuerichdata.chatgptten.com/v1/"
-API_KEY="sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl"
+API_KEY=""
 EVAL_CONTENT_MODEL="gpt-4o-mini"
 EVAL_STYLE_MODEL="gpt-4o-2024-08-06"
 

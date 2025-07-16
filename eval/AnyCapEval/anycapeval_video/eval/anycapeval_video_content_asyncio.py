@@ -25,7 +25,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Video Caption Quality Evaluation Tool')
     
     # API configuration parameters
-    parser.add_argument('--base_url', type=str, default="",
+    parser.add_argument('--base_url', type=str, default="https://boyuerichdata.chatgptten.com/v1/chat/completions",
                         help='OpenAI API base URL')
     parser.add_argument('--api_key', type=str, default="",
                         help='OpenAI API key')
@@ -37,7 +37,7 @@ def parse_arguments():
                         default='',
                         help='Original model results file path')
     parser.add_argument('--output_path', type=str, 
-                        default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/code_test/eval_content.jsonl',
+                        default='/anycapeval_video/output/code_test/eval_content.jsonl',
                         help='Evaluation result output file path')
     # Data path parameters - fixed
     parser.add_argument('--content_data_path', type=str, 

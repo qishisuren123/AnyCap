@@ -118,19 +118,19 @@ def process_data(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Qwen2.5-VL video processing tool")
-    parser.add_argument('--checkpoint', type=str, default='Qwen/Qwen2.5-VL-7B-Instruct',
-                       help='Qwen2.5-VL model path')
+    parser.add_argument('--checkpoint', type=str, default='/path/to/Qwen2.5-VL-7B-Instruct',
+                       help='Model checkpoint path')
 
     parser.add_argument('--data_path', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/anycapeval_video_ref.jsonl',
+                       default='/path/to/anycapeval_video_ref.jsonl',
                        help='Path to the JSONL data file')
     parser.add_argument('--video_dir', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/video_datas',
-                       help='Directory containing the videos')
+                       default='path/to/test/video/directory',
+                       help='Directory containing the video files')
                        
-    parser.add_argument('--output_path_content', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/tmp_qwen_content',
+    parser.add_argument('--output_path_content', type=str, default='/path/to/output/content.jsonl',
                        help='Path for content outputs')
-    parser.add_argument('--output_path_style', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/tmp_qwen_style',
+    parser.add_argument('--output_path_style', type=str, default='/path/to/output/style.jsonl',
                        help='Path for style outputs')
 
     parser.add_argument("--num-beams", type=int, default=1, help="Number of beams for beam search")

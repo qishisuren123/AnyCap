@@ -8,7 +8,6 @@ import time
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# 配置常量
 DEFAULT_MAX_RETRIES = 5
 DEFAULT_BATCH_SIZE = 5
 DEFAULT_MAX_WORKERS = 4
@@ -20,19 +19,17 @@ def parse_arguments():
     # API configuration parameters
     parser.add_argument('--base_url', type=str, default="https://boyuerichdata.chatgptten.com/v1/chat/completions",
                         help='API base URL')
-    parser.add_argument('--api_key', type=str, default="sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl",
+    parser.add_argument('--api_key', type=str, default="your/api/key",
                         help='API key')
     parser.add_argument('--model', type=str, default="gpt-4o-2024-08-06",
                         help='Model name to use')
     
     # Data path parameters
-    parser.add_argument('--data_path', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/code_test/temp_content.jsonl',
+    parser.add_argument('--data_path', type=str, default='/path/to/content/model_results.jsonl',
                         help='Original model result file path')
-    parser.add_argument('--output_path', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/code_test/eval_content.jsonl',
+    parser.add_argument('--output_path', type=str, default='/path/to/evaluation_results.jsonl',
                         help='Evaluation result output file path')
-    parser.add_argument('--image_dir', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/test_image_data',
-                        help='Image file directory')
-    parser.add_argument('--content_template_path', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/instruction_content.txt',
+    parser.add_argument('--content_template_path', type=str, default='/path/to/instruction_content.txt',
                         help='Prompt template file path')
     
     # Processing parameters
@@ -81,13 +78,8 @@ def validate_response_format(response):
         print(f"Validation failed: {e}")
         return False
 
-def encode_image_to_base64(image_path):
-    """Encode image to base64 string"""
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode("utf-8")
 
 def gpt_evaluate(prompt, base_url, api_key, model, max_retries=5):
-    """统一的API调用函数"""
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {api_key}"  
@@ -129,8 +121,6 @@ def gpt_evaluate(prompt, base_url, api_key, model, max_retries=5):
     return '{"caption_evaluation": {"key_points_scores": {"error": 0}, "total_score": 0, "score_reasons": {"error": "API error after multiple attempts"}}'
 
 def process_single_evaluation(data_item, args, prompt_template):
-    """处理单个图片评估"""
-    image_path = f"{args.image_dir}/{data_item['image']}"
     question = data_item['conversations'][0]['value']
     ref_answer = data_item['conversations'][1]['value'] if len(data_item['conversations']) > 1 else ""
     answer = data_item['model_response_content']
@@ -167,7 +157,6 @@ def process_single_evaluation(data_item, args, prompt_template):
         return None
 
 def process_batch_evaluation(batch_data, args, prompt_template, output_file):
-    """批量处理评估"""
     results = []
     
     with ThreadPoolExecutor(max_workers=args.max_workers) as executor:
@@ -190,7 +179,6 @@ def process_batch_evaluation(batch_data, args, prompt_template, output_file):
     return results
 
 def calculate_scores_and_save(output_path):
-    """计算并保存统计结果"""
     total_score = 0
     max_score = 0
     total_entries = 0
@@ -225,7 +213,6 @@ def calculate_scores_and_save(output_path):
                 max_score += requirements_count
                 total_score += score
 
-                # 检查长度限制
                 if 'restriction' in data and len(data['restriction']) > 1:
                     len_limit = data['restriction'][1]
                     if 'answer' in data:
@@ -234,7 +221,6 @@ def calculate_scores_and_save(output_path):
                             score = max(score - 1, 0)
                             length_penalty_count += 1
                 
-                # 维度统计
                 if 'restriction' in data:
                     dimension = data['restriction'][0]
                     
@@ -256,11 +242,9 @@ def calculate_scores_and_save(output_path):
             except json.JSONDecodeError:
                 continue
 
-    # 计算百分比
     percentage = (total_score / max(max_score, 1)) * 100
     valid_entries = total_entries - invalid_data_count
 
-    # 保存统计结果
     summary_path = os.path.join(os.path.dirname(output_path), "content_summary_with_length_penalty.txt")
     with open(summary_path, 'w', encoding='utf-8') as summary_file:
         summary_file.write("===== Image Caption Evaluation Summary =====\n")
@@ -350,7 +334,6 @@ def sentences_count(text):
     return sum(1 for s in sentences if s.strip())
 
 def main(args):
-    """主处理函数"""
     if args.calculate_only:
         print(f"Calculate score statistics only mode, using evaluation results: {args.output_path}")
         calculate_scores_and_save(args.output_path)

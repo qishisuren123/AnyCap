@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set base paths
-BASE_DIR="/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image"
-SCRIPT_DIR="/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/eval"  # Please replace with actual script directory
+BASE_DIR="/anycapeval_image"
+SCRIPT_DIR="/anycapeval_image/eval"  # Please replace with actual script directory
 OUTPUT_DIR="${BASE_DIR}/output"
 
 EXP_ID="code_test"  
@@ -21,9 +21,9 @@ EVAL_STYLE="${OUTPUT_FOLDER}/eval_style.jsonl"
 
 # API configuration
 API_BASE_URL="https://boyuerichdata.chatgptten.com/v1/chat/completions"
-API_KEY="sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl"
-EVAL_CONTENT_MODEL="gpt-4o-2024-08-06"
-EVAL_STYLE_MODEL="gpt-4o-2024-08-06"
+API_KEY=""
+EVAL_CONTENT_MODEL=""
+EVAL_STYLE_MODEL=""
 
 # Other fixed paths
 IMAGE_DIR="${BASE_DIR}/test_image_data"

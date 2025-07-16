@@ -48,7 +48,8 @@ def merge_and_sort_outputs(content_file, style_file, output_file):
         for data in all_data:
             f.write(json.dumps(data, ensure_ascii=False) + '\n')
     
-    print(f"Merged {len(all_data)} records and saved to {output_file}")
+    # print(f"Merged {len(all_data)} records and saved to {output_file}")
+    print("Merged {} records and saved to {}".format(len(all_data), output_file))
 
 def split_model(num_layers, vit_alpha=0.5):
     """Device mapping generation function (aligned with video version)"""
@@ -203,25 +204,27 @@ def process_data(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # Variable parameters
+
+
     parser.add_argument('--checkpoint', type=str, 
-                       default='/mnt/petrelfs/share_data/wangweiyun/share_internvl/InternVL2_5-8B',
+                       default='path/to/InternVL/model/checkpoint',
                        help='Model checkpoint path')
     parser.add_argument('--output_path_content', type=str, 
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/temp_content.jsonl',
+                       default='path/to/output/content.jsonl',
                        help='Path for model content outputs')
     parser.add_argument('--output_path_style', type=str, 
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/temp_style.jsonl',
+                       default='path/to/output/style.jsonl',
                        help='Path for model style outputs')
     parser.add_argument("--merged-output", type=str,
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/merged_results.jsonl',
-                       help="Path for merged and sorted output file")
+                       default='path/to/output/merged_results.jsonl',
+                       help="Path for merged output file")
     
     # Fixed parameters  
     parser.add_argument('--data_path', type=str, 
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/anycapeval_image_ref.jsonl',
+                       default='path/to/data/anycapeval_image_ref.jsonl',
                        help='Path to the JSONL data file')
     parser.add_argument('--image_dir', type=str, 
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/test_image_data',
+                       default='path/to/test/image/directory',
                        help='Directory containing the images')
 
     parser.add_argument("--num-beams", type=int, default=1, help="Number of beams for beam search")

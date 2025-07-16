@@ -157,17 +157,17 @@ def process_videos(args):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--checkpoint', type=str,
-                        default='/mnt/petrelfs/renyiming/model/InternVL2/internvl_chat_audio/work_dirs/internvl_chat_v3_0/internvl3_2b_221_221_221')
+                        default='')
                         
     parser.add_argument('--video-dir', type=str,
-                        default='/mnt/petrelfs/renyiming/ly_workspace/video_benchs/VidCapBench/videos',
+                        default='VidCapBench/videos',
                         help='Directory containing video files')
     parser.add_argument('--output-dir', type=str, 
-                        default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/vidcapbench/output/',
+                        default='vidcapbench/output/',
                         help='Directory to save output files')
     parser.add_argument('--output-name', type=str, default='temp',
                         help='Name for the output jsonl file')
-    parser.add_argument('--response-file', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/vidcapbench/output/internvl2.5-8b.jsonl',
+    parser.add_argument('--response-file', type=str, default='.jsonl',
                         help='Path to the jsonl file containing previous responses')
                         
     parser.add_argument('--num-beams', type=int, default=1)

@@ -1,121 +1,3 @@
-# import os
-# import json
-# import argparse
-# import torch
-# import torchaudio
-# from transformers import AutoTokenizer
-# from internvl.model.internvl_chat import InternVLChatModel
-
-# def get_audio_duration(audio_path):
-#     try:
-#         waveform, sample_rate = torchaudio.load(audio_path)
-#         return waveform.shape[1] / sample_rate
-#     except Exception as e:
-#         print(f"Error loading audio {audio_path}: {str(e)}")
-#         return None
-
-# def test_internvl_chat_audio_integration(input_file, output_jsonl, audio_base_dir, checkpoint):
-
-#     max_new_tokens = 100
-#     temperature = 0.0
-#     load_in_8bit = False
-#     load_in_4bit = False
-#     auto_device_mapping = True
-
-#     torch.cuda.set_device(0)
-#     device = torch.device("cuda:0")
-
-#     kwargs = {'device_map': 'auto'} if auto_device_mapping else {}
-#     tokenizer = AutoTokenizer.from_pretrained(checkpoint, trust_remote_code=True, use_fast=False)
-#     model = InternVLChatModel.from_pretrained(
-#         checkpoint, low_cpu_mem_usage=True, torch_dtype=torch.bfloat16,
-#         load_in_8bit=load_in_8bit, load_in_4bit=load_in_4bit, **kwargs).eval()
-
-#     if not load_in_8bit and not load_in_4bit and not auto_device_mapping:
-#         model = model.cuda()
-
-#     model._load_audio_model()
-
-#     os.makedirs(os.path.dirname(output_jsonl), exist_ok=True)
-    
-#     with open(output_jsonl, 'w', encoding='utf-8') as f_out:
-#         try:
-#             with open(input_file, 'r', encoding='utf-8') as f:
-#                 for line in f:
-#                     base_data = json.loads(line)
-#                     audio_key = base_data['audio']
-#                     audio_path = os.path.join(audio_base_dir, audio_key)
-                    
-#                     question = base_data['conversations'][0]['value']
-#                     response = base_data['conversations'][1]['value']
-                    
-#                     prompt = (f"<audio>\nYou are a multimodal aligner. Transform the existing caption to meet "
-#                           f"the requirement: '{question[8:]}'. Existing caption: '{response}'. "
-#                           f"Only respond with the improved caption.")
-
-#                     try:
-#                         audio_tensor = model.audio_model.load_audio(audio_path).cuda()
-#                         time_long = get_audio_duration(audio_path)
-#                         if time_long is None:
-#                             continue
-#                     except Exception as e:
-#                         print(f"Error loading audio {audio_path}: {str(e)}")
-#                         continue
-
-#                     try:
-#                         generation_config = dict(
-#                             num_beams=1,
-#                             max_new_tokens=max_new_tokens,
-#                             min_new_tokens=1,
-#                             do_sample=True if temperature > 0 else False,
-#                             temperature=temperature,
-#                         )
-
-#                         pred = model.chat(
-#                             tokenizer=tokenizer,
-#                             pixel_values=None,
-#                             audio_values=audio_tensor,
-#                             question=prompt,
-#                             generation_config=generation_config
-#                         )
-                        
-#                         result = {
-#                             "id": base_data['id'],
-#                             "audio": audio_key,
-#                             "conversations": [
-#                                 {"from": "human", "value": question},
-#                                 {"from": "gpt", "value": response}
-#                             ],
-#                             "time_long": time_long,
-#                             "restriction": base_data['restriction'],
-#                             "model_response_content": pred
-#                         }
-                        
-#                         f_out.write(json.dumps(result, ensure_ascii=False) + '\n')
-                    
-#                     except Exception as e:
-#                         print(f"Processing error: {str(e)}")
-#         except FileNotFoundError as e:
-#             print(f"File not found: {input_path}")
-
-# if __name__ == "__main__":
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument("--input_file", type=str, required=True, help="Path to input JSONL file")
-#     parser.add_argument("--output_file", type=str, required=True, help="Path to save output JSONL")
-#     parser.add_argument("--audio_dir", type=str, required=True, help="Base directory for audio files")
-#     parser.add_argument("--checkpoint", type=str, required=True, help="Path to InternVL checkpoint")
-
-#     args = parser.parse_args()
-
-#     test_internvl_chat_audio_integration(
-#         args.input_file,
-#         args.output_file,
-#         args.audio_dir,
-#         args.checkpoint
-#     )
-
-
-
 import os
 import json
 import argparse
@@ -129,7 +11,6 @@ from decord import VideoReader, cpu
 import numpy as np
 
 
-# content/style分类
 content_restriction = ['action', 'appearance', 'background', 'camera', 'event', 'instance', 'perspective', 'position']
 style_restriction = ['brief', 'detail', 'narrative', 'poem', 'theme']
 
@@ -191,7 +72,6 @@ def load_internvl_model(checkpoint, device, args):
     if not args.auto and not args.load_in_8bit and not args.load_in_4bit:
         model = model.to(device)
     
-    # 加载音频模型
     model._load_audio_model()
     
     return model, tokenizer
@@ -320,39 +200,38 @@ def merge_and_sort_outputs(content_file, style_file, output_file):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     
-    # 必须参数
-    parser.add_argument('--checkpoint', type=str, default='/mnt/petrelfs/renyiming/model/InternVL2/internvl_chat_audio/work_dirs/internvl_chat_v3_0/internvl3_2b_221_221_221',
-                       help='InternVL模型checkpoint路径')
-    parser.add_argument('--init_responses_path', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/merged_results.jsonl',
-                       help='预生成响应的JSONL文件路径')
-    parser.add_argument('--data_path', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/anycapeval_audio_ref.jsonl',
-                       help='输入数据JSONL文件路径')
-    parser.add_argument('--audio_dir', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/test_audio_data',
-                       help='音频文件目录')
+    # Required parameters
+    parser.add_argument('--checkpoint', type=str, default='path/to/model/checkpoint',
+                       help='Path to model checkpoint file')
+    parser.add_argument('--init_responses_path', type=str, default='path/to/output.jsonl',
+                       help='Path to the JSONL file containing pregenerated responses')
+    parser.add_argument('--data_path', type=str, default='/path/to/anycapeval_audio_ref.jsonl',
+                       help='Path to the JSONL data file')
+    parser.add_argument('--audio_dir', type=str, default='path/to/audio/directory',
+                       help='Directory containing audio files')
     
-    # 输出参数
-    parser.add_argument('--output_path_content', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/content_input/acm_content.jsonl',
-                       help='内容类输出JSONL路径')
-    parser.add_argument('--output_path_style', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/style_input/acm_style.jsonl',
-                       help='风格类输出JSONL路径')
-    parser.add_argument('--merged-output', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/acm_merged_results.jsonl',
-                       help='合并后的输出文件路径')
+    # Output parameters
+    parser.add_argument('--output_path_content', type=str, default='path/to/output/content.jsonl',
+                       help='Path for content-related outputs JSONL')
+    parser.add_argument('--output_path_style', type=str, default='/path/to/output/style.jsonl',
+                       help='Path for style-related outputs JSONL')
+    parser.add_argument('--merged-output', type=str, default='/path/to/output/merged_results.jsonl',
+                       help='Path for merged output JSONL file')
     
-    # 生成参数
-    parser.add_argument("--num-beams", type=int, default=1, help="beam search的beam数")
-    parser.add_argument("--top-k", type=int, default=50, help="Top-k采样参数")
-    parser.add_argument("--top-p", type=float, default=0.9, help="Top-p采样参数")
-    parser.add_argument("--max-new-tokens", type=int, default=1024, help="生成的最大token数")
-    parser.add_argument("--sample", action="store_true", help="启用随机采样")
+    # Generation parameters
+    parser.add_argument("--num-beams", type=int, default=1, help="Number of beams for beam search")
+    parser.add_argument("--top-k", type=int, default=50, help="Top-k sampling parameter")
+    parser.add_argument("--top-p", type=float, default=0.9, help="Top-p sampling parameter")
+    parser.add_argument("--max-new-tokens", type=int, default=1024, help="Maximum number of new tokens to generate")
+    parser.add_argument("--sample", action="store_true", help="Enable random sampling")
     
-    # 模型加载参数
-    parser.add_argument("--load-in-8bit", action="store_true", help="启用8-bit量化")
-    parser.add_argument("--load-in-4bit", action="store_true", help="启用4-bit量化")
-    parser.add_argument("--auto", action="store_true", help="启用自动设备映射")
+    # Model loading parameters
+    parser.add_argument("--load-in-8bit", action="store_true", help="Enable 8-bit quantization")
+    parser.add_argument("--load-in-4bit", action="store_true", help="Enable 4-bit quantization")
+    parser.add_argument("--auto", action="store_true", help="Enable automatic device mapping")
 
     args = parser.parse_args()
 
-    # 确保输出目录存在（与视频模态相同）
     for output_path in [args.output_path_content, args.output_path_style]:
         output_dir = os.path.dirname(output_path)
         if not os.path.exists(output_dir):
@@ -360,6 +239,5 @@ if __name__ == "__main__":
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write("")
 
-    # 执行处理流程
     process_audio_data(args)
     merge_and_sort_outputs(args.output_path_content, args.output_path_style, args.merged_output)

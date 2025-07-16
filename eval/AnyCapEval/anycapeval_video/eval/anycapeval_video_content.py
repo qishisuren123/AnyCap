@@ -23,29 +23,29 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Video caption quality assessment tool')
     
     # API configuration parameters
-    parser.add_argument('--base_url', type=str, default="",
+    parser.add_argument('--base_url', type=str, default="https://boyuerichdata.chatgptten.com/v1/chat/completions",
                         help='OpenAI API base URL')
-    parser.add_argument('--api_key', type=str, default="",
+    parser.add_argument('--api_key', type=str, default="your/api/key",
                         help='OpenAI API key')
     parser.add_argument('--model', type=str, default="gpt-4o-mini",
                         help='Model name to use')
     
     # Data path parameters - changeable parameters
     parser.add_argument('--data_path', type=str, 
-                        default='',
+                        default='/path/to/content/model_results.jsonl',
                         help='Original model result file path')
     parser.add_argument('--output_path', type=str, 
-                        default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/code_test/eval_content.jsonl',
+                        default='/path/to/evaluation_results.jsonl',
                         help='Evaluation result output file path')
     # Data path parameters - fixed parameters
     parser.add_argument('--content_data_path', type=str, 
-                        default='',
+                        default='/path/to/anycapeval_video_ref.jsonl',
                         help='Predefined evaluation points data file path')
     parser.add_argument('--content_template_path', type=str, 
-                        default='',
+                        default='/path/to/instruction_content.txt',
                         help='Prompt template file path')
     parser.add_argument('--video_dir', type=str, 
-                        default='',
+                        default='/path/to/test/video/directory',
                         help='Video file directory')
     
     # Other parameters

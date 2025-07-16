@@ -8,7 +8,7 @@ import time
 import argparse
 
 base_url = "https://boyuerichdata.chatgptten.com/v1/chat/completions"
-skey = "sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl"
+skey = ""
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {skey}"  

@@ -154,25 +154,25 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Qwen model for caption generation")
     # Variable parameters
     parser.add_argument('--checkpoint', type=str,
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/new_bench/checkpoint/Qwen2.5-VL-7B-Instruct',
+                       default='/path/to/Qwen2.5-VL-7B-Instruct',
                        help='Model checkpoint path')
     parser.add_argument('--output_path_content', type=str,
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/qwen_content.jsonl',
+                       default='/path/to/output/content.jsonl',
                        help='Path for content outputs')
     parser.add_argument('--output_path_style', type=str,
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/qwen_style.jsonl',
+                       default='/path/to/output/style.jsonl',
                        help='Path for style outputs')
     parser.add_argument("--merged_output", type=str,
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/output/merged_results.jsonl',
-                       help="Path for merged and sorted output file")
+                       default='/path/to/output/merged_results.jsonl',
+                       help="Path for merged output file")
     
     # Fixed parameters
     parser.add_argument('--data_path', type=str,
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/anycapeval_image_ref.jsonl',
+                       default='/path/to/anycapeval_image_ref.jsonl',
                        help='Path to the JSONL data file')
     parser.add_argument('--image_dir', type=str,
-                       default='/mnt/petrelfs/renyiming/lzq_workspace/image_submit_code/anycapeval_image/test_image_data',
-                       help='Directory containing the images')
+                       default='path/to/test/image/directory',
+                       help='Directory containing the image files')
     
     args = parser.parse_args()
     

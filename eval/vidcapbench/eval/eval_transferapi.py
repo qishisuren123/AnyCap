@@ -23,7 +23,7 @@ try:
     with open("apikey.txt", "r") as f:
         api_key = f.read().strip()
 except:
-    api_key = 'sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl'
+    api_key = ''
 
 base_url = "https://boyuerichdata.chatgptten.com/v1/chat/completions"
 headers = {
@@ -149,7 +149,7 @@ Your Result:
     return QA_pairs
 
 
-t5_tokenizer = T5Tokenizer.from_pretrained("/mnt/petrelfs/renyiming/ly_workspace/video_benchs/VidCapBench-main/t5")
+t5_tokenizer = T5Tokenizer.from_pretrained("")
 # t5_tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base", cache_dir="./tokenizer_cache")
 
 def cal_token_num(caption_path):
@@ -228,7 +228,7 @@ def cal_cate_correctness(pred_answer_path, pred_correct_path, avg_token_num):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--caption_path", type=str, default="/mnt/petrelfs/renyiming/ly_workspace/submit_code/vidcapbench/output/temp.jsonl", help="Path to the captions JSONL file.")
+    parser.add_argument("--caption_path", type=str, default=".jsonl", help="Path to the captions JSONL file.")
     parser.add_argument("--qa_path", type=str, default="./VidCapBench-AE_QA.jsonl", help="Path to the QA pairs JSONL file.")
 
     args = parser.parse_args()

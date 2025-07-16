@@ -21,25 +21,25 @@ def parse_arguments():
                         default="https://boyuerichdata.chatgptten.com/v1/chat/completions",
                         help='OpenAI API base URL')
     parser.add_argument('--api_key', type=str, 
-                        default="sk-iproK7tAwu7J2ZBJWL8G3TiKUepPUH6uj5JQ7w0oXCRu02wl",
+                        default="your/api/key",
                         help='OpenAI API key')
-    parser.add_argument('--model', type=str, default="gpt-4o",
+    parser.add_argument('--model', type=str, default="gpt-4o-2024-08-06",
                         help='Model name to use, e.g.: gpt-4o, gpt-4o-mini, gpt-4-turbo, claude-3-5-sonnet-20240620')
     
     # Data path parameters
     parser.add_argument('--data_path', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/anycapeval_video_ref.jsonl',
+                       default='/path/to/anycapeval_video_ref.jsonl',
                        help='Path to the JSONL data file')
     parser.add_argument('--video_dir', type=str, 
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/video_datas',
-                       help='Directory containing the videos')
-    parser.add_argument('--output_path_content', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_content_2.jsonl',
-                       help='Path for aligned model content outputs')
-    parser.add_argument('--output_path_style', type=str, default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/temp_style_2.jsonl',
-                       help='Path for aligned model non-content outputs')
+                       default='path/to/test/video/directory',
+                       help='Directory containing the video files')
+    parser.add_argument('--output_path_content', type=str, default='/path/to/output/temp_content.jsonl',
+                       help='Path for content-related outputs')
+    parser.add_argument('--output_path_style', type=str, default='/path/to/output/temp_style.jsonl',
+                       help='Path for style-related outputs')
     parser.add_argument("--merged-output", type=str,
-                       default='/mnt/petrelfs/renyiming/ly_workspace/submit_code/anycapeval_video/output/merged_results.jsonl',
-                       help="Path for merged and sorted output file")
+                       default='/path/to/output/merged_results.jsonl',
+                       help="Path for merged output file")
     
     # Other parameters
     parser.add_argument('--num_segments', type=int, default=8, 

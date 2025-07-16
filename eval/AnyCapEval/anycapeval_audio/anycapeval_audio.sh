@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set base paths
-BASE_DIR="/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio"
-SCRIPT_DIR="/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval"  # Please replace with actual script directory
+BASE_DIR="/anycapeval_audio"
+SCRIPT_DIR="/anycapeval_audio/eval"  # Please replace with actual script directory
 OUTPUT_DIR="${BASE_DIR}/output"
 TEST_REFERENCE="${BASE_DIR}/anycapeval_audio_ref.jsonl"
 
@@ -13,22 +13,22 @@ OUTPUT_FOLDER="${OUTPUT_DIR}/${EXP_ID}/"
 mkdir -p ${OUTPUT_FOLDER}
 
 # Set output paths
-OUTPUT_PATH_CONTENT="/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/content_input/test.jsonl"
-OUTPUT_PATH_STYLE="/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/style_input/test.jsonl"
+OUTPUT_PATH_CONTENT="/anycapeval_audio/eval/input/content_input/test.jsonl"
+OUTPUT_PATH_STYLE="/anycapeval_audio/eval/input/style_input/test.jsonl"
 
 # Set evaluation result paths
 EVAL_CONTENT="${OUTPUT_FOLDER}/eval_content.jsonl"
 EVAL_STYLE="${OUTPUT_FOLDER}/eval_style.jsonl"
 
 # API configuration
-API_KEY="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"
+API_KEY="YOUR_API_KEY_HERE"
 
 # Other fixed paths
 AUDIO_DIR="${BASE_DIR}/test_audio_data"
 CONTENT_TEMPLATE_PATH="${BASE_DIR}/instruction_content.txt"
 STYLE_TEMPLATE_PATH="${BASE_DIR}/instruction_style.txt"
-EVAL_CONTENT_MODEL="gpt-4o"
-EVAL_STYLE_MODEL="gpt-4o-audio-preview"
+EVAL_CONTENT_MODEL=""
+EVAL_STYLE_MODEL=""
 
 echo "=================== Starting Evaluation Process ==================="
 echo "Experiment ID: ${EXP_ID}"

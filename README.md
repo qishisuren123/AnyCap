@@ -1,4 +1,4 @@
-# AnyCap: A Unified Framework for Controllable Caption Generation
+<!-- # AnyCap: A Unified Framework for Controllable Caption Generation
 
 ## Overview
 
@@ -132,6 +132,169 @@ If you use AnyCap in your research, please cite our paper:
 ```
 
 ## License
-
+@builtin markdown language features
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+ -->
 
+
+
+# AnyCap Project: A Unified Framework, Dataset, and Benchmark for Controllable Omni-modal Captioning
+
+<p align="center">
+    <img src="assets/anycap_overview.png" width="500"/>
+</p>
+
+<p align="center">
+    🤗 [Model Weights](https://huggingface.co/qishisuren/AnyCapModel)  |  📊 [AnyCapEval Benchmark](https://huggingface.co/datasets/qishisuren/AnyCapEval)  |  📝 [Paper](https://arxiv.org/abs/你的arxiv编号)
+</p>
+
+---
+
+## 🚩 Highlights
+
+- 🏆 **Unified Multi-modal Captioning:** One framework covers image, audio, and video captioning with controllable styles.
+- 📝 **Customizable Caption Styles**: Control caption styles through predefined instructions and models.
+- 📊 **Open Benchmark & Evaluation:** AnyCapEval—an industry-level, multi-modal benchmark with comprehensive evaluation protocols.
+- 🛠️ **End-to-End Open Source:** Full training pipeline, evaluation toolkits, dataset pipeline and open benchmark.
+
+
+---
+
+## 📑 Todo List
+
+- [x] Paper released
+- [x] AnyCapEval benchmark available
+- [x] Pretrained model weights released
+- [ ] Training dataset (AnyCapDataset) to be open-sourced soon
+
+---
+
+## 🗂️ Resources
+
+- **Huggingface Model**: [AnyCapModel](https://huggingface.co/qishisuren/AnyCapModel)
+- **Benchmark Dataset**: [AnyCapEval](https://huggingface.co/datasets/qishisuren/AnyCapEval)
+- **Technical Report / Paper**: [arXiv](https://arxiv.org/abs/你的arxiv编号)
+- **Demo**: [Demo Page](https://yourdemo.link)
+
+---
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+git clone https://github.com/qishisuren123/AnyCap.git
+cd AnyCap
+pip install -r requirements.txt
+```
+
+Install Fairseq manually:
+
+```bash
+git clone https://github.com/pytorch/fairseq
+cd fairseq
+pip install --editable ./
+```
+
+### Download Weights
+
+- [AnyCapModel weights on HuggingFace](https://huggingface.co/qishisuren/AnyCapModel)
+
+### Download Benchmark Data
+
+- [AnyCapEval benchmark on HuggingFace](https://huggingface.co/datasets/qishisuren/AnyCapEval)
+- Training dataset (**AnyCapDataset**) will be released soon.
+
+---
+
+## 💡 Introduction
+
+**AnyCap** is a unified and controllable omni-modal captioning framework, supporting caption generation for images, audio, and videos with fine-grained style control. The framework is fully open-source, featuring training code, benchmark datasets, and a comprehensive evaluation toolkit—all-in-one.
+
+*Figure 1 above shows an overview of the AnyCap architecture and data pipeline.*
+
+---
+
+## 📊 Benchmark & Evaluation
+
+### AnyCapEval Benchmark
+Here we illustrate the usage for video modality (audio and image modalities follow a similar structure).
+
+1. **Generate Captions**:
+
+```bash
+python /path/to/AnyCapEval/gen/gen_xxx.py
+```
+
+This generates two files:
+
+- `content.jsonl`
+- `style.jsonl`
+
+2. **Configure Generated Files**:
+
+Edit the file `anycapeval_video.sh`, update paths:
+
+```bash
+OUTPUT_PATH_CONTENT=/path/to/generated/content.jsonl
+OUTPUT_PATH_STYLE=/path/to/generated/style.jsonl
+```
+
+3. **Run Evaluation**:
+
+Activate proxy and run:
+
+```bash
+bash anycapeval_video.sh
+```
+
+### Related Caption Benchmarks (e.g., VidCapBench)
+
+We illustrate usage with the video modality benchmark--VidCapBench(image and audio modalities follow a similar approach).
+
+1. **Generate Captions**:
+
+```bash
+python /path/to/vidcapbench/gen/gen_xxx.py
+```
+
+2. **Run Evaluation**:
+
+Set the generated `.jsonl` file in the `--caption_path` parameter:
+
+```bash
+python eval_xxx.py --caption_path /path/to/generated/captions.jsonl
+```
+
+
+## 📂 Dataset
+
+### AnyCapDataset (Coming Soon)
+
+High-quality, fully annotated datasets for all three modalities (image, audio, video) will be released soon on HuggingFace. Stay tuned!
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please open issues or submit PRs for feedback and improvements.
+
+---
+
+## 📝 Citation
+
+```bibtex
+@misc{anycap2025,
+  author = {Your Name},
+  title = {AnyCap: A Unified Framework for Controllable Caption Generation},
+  year = {2025},
+  howpublished = {\url{https://github.com/qishisuren123/AnyCap}},
+}
+```
+
+---
+
+## License
+@builtin markdown language features
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+ -->

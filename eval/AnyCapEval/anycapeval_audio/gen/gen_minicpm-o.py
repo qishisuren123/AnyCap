@@ -1,69 +1,3 @@
-# import json
-# import torch
-# import librosa
-# from transformers import AutoModel, AutoTokenizer
-# from tqdm import tqdm
-
-# # === 加载模型和tokenizer ===
-# model_path = ''
-# model = AutoModel.from_pretrained(model_path, trust_remote_code=True,
-#     attn_implementation='sdpa', torch_dtype=torch.bfloat16)
-# model = model.eval().cuda()
-# tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-# model.init_tts()
-# model.tts.float()
-
-# # === 文件路径 ===
-# input_path = ''
-# audio_base_path = ''
-# output_path = ''
-
-# # === 读取输入文件并处理每条数据 ===
-# with open(input_path, 'r') as f_in, open(output_path, 'w') as f_out:
-#     for line in tqdm(f_in, desc="Processing audio items"):
-#         data = json.loads(line)
-
-#         # 提取prompt
-#         prompt = None
-#         for conv in data['conversations']:
-#             if conv['from'] == 'human':
-#                 prompt = conv['value']
-#                 break
-#         if prompt is None:
-#             print(f"Skipping id {data['id']} due to missing prompt.")
-#             continue
-
-#         # 加载对应的音频
-#         audio_path = f"{audio_base_path}/{data['audio']}"
-#         try:
-#             audio_input, _ = librosa.load(audio_path, sr=16000, mono=True)
-#         except Exception as e:
-#             print(f"Error loading audio for id {data['id']}: {e}")
-#             continue
-
-#         # 构造模型输入
-#         msgs = [{'role': 'user', 'content': [prompt, audio_input]}]
-
-#         # 调用模型
-#         try:
-#             response = model.chat(
-#                 msgs=msgs,
-#                 tokenizer=tokenizer,
-#                 sampling=True,
-#                 max_new_tokens=128,
-#                 use_tts_template=True,
-#                 generate_audio=False,  
-#                 temperature=0.3,
-#             )
-#             data['model_response_content'] = response if isinstance(response, str) else getattr(response, 'text', '')
-#         except Exception as e:
-#             print(f"Error during model chat for id {data['id']}: {e}")
-#             continue
-
-#         # 写入更新后的数据
-#         f_out.write(json.dumps(data, ensure_ascii=False) + '\n')
-
-
 import argparse
 import json
 import torch
@@ -191,21 +125,21 @@ def process_audio_data(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="MiniCPM audio processing tool")
-    parser.add_argument('--checkpoint', type=str, default='/mnt/petrelfs/renyiming/lzq_workspace/new_bench/checkpoint/MiniCPM-o-2_6',
+    parser.add_argument('--checkpoint', type=str, default='path/to/MiniCPM-o-2_6/model',
                        help='MiniCPM model path')
     
-    parser.add_argument('--data_path', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/anycapeval_audio_ref.jsonl',
+    parser.add_argument('--data_path', type=str, default='path/to/anycapeval_audio_ref.jsonl',
                        help='Path to the JSONL data file')
-    parser.add_argument('--audio_dir', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/test_audio_data',
+    parser.add_argument('--audio_dir', type=str, default='path/to/test/audio/directory',
                        help='Directory containing the audio files')
                        
-    parser.add_argument('--output_path_content', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/content_input/minicpm_content.jsonl',
+    parser.add_argument('--output_path_content', type=str, default='/path/to/output/content.jsonl',
                        help='Path for content outputs')
-    parser.add_argument('--output_path_style', type=str, default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/style_input/minicpm_style.jsonl',
+    parser.add_argument('--output_path_style', type=str, default='/path/to/output/style.jsonl',
                        help='Path for style outputs')
     parser.add_argument("--merged_output", type=str,
-                       default='/mnt/petrelfs/renyiming/gm_workspace/audio_submit_code/anycapeval_audio/eval/input/merged_results.jsonl',
-                       help="Path for merged and sorted output file")
+                       default='/path/to/output/merged_results.jsonl',
+                       help="Path for merged output file")
 
     parser.add_argument("--max-new-tokens", type=int, default=256, help="Maximum number of tokens to generate")
     parser.add_argument("--temperature", type=float, default=0.3, help="Sampling temperature")
