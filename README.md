@@ -190,6 +190,19 @@ pip install --editable ./
 ### Download Weights
 
 - [AnyCapModel weights on HuggingFace](https://huggingface.co/qishisuren/AnyCapModel)
+- We recommend storing the downloaded model weights in the following directory structure:
+
+```text
+AnyCap/
+├── AnyCapDataset/   
+├── assets/                    
+├── model_weights/                       
+│   ├── ACM
+│   ├── InternVL
+│   └── ...
+├── eval
+├── ...    
+```
 
 ### Download Benchmark Data
 
@@ -209,6 +222,23 @@ pip install --editable ./
 ## 📊 Benchmark & Evaluation
 
 ### AnyCapEval Benchmark
+<p align="center">
+  <img src="assets/bench_result.jpg" width="760"/>
+</p>
+
+**Figure 2 – Evaluation methodology of AnyCapEval.**  
+(a) Examples demonstrating **content** scoring with *Key-point Density* (KPD) and **style** scoring rules.  
+(b) KPD correlation analysis, showing that KPD length‐based metrics achieve the highest Pearson/Spearman/Kendall correlations with human judgments.  
+(c) Radar chart illustrating the large performance gains delivered by **ACM** integration across ten dimensions (IApt–Thm).
+
+|  | GPT-4o | **GPT-4o + ACM** | InternVL2.5-8B | **InternVL2.5-8B + ACM** |
+|---|:---:|:---:|:---:|:---:|
+| **Average ↑** | 2.79 | **4.15** | 2.75 | **3.98** |
+
+
+> **Key takeaway •** ACM boosts GPT-4o’s content scores by **+45 %** and style scores by **+12 %**, and yields similar gains on strong open models, highlighting the reliability and coverage of AnyCapEval.
+
+
 Here we illustrate the usage for video modality (audio and image modalities follow a similar structure).
 
 1. **Generate Captions**:
