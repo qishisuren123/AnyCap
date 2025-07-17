@@ -286,6 +286,5 @@ We welcome contributions! Please open issues or submit PRs for feedback and impr
 ---
 
 ## License
-@builtin markdown language features
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
- -->
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
