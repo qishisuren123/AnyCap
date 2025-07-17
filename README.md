@@ -306,8 +306,8 @@ We welcome contributions! Please open issues or submit PRs for feedback and impr
 
 ```bibtex
 @misc{anycap2025,
-  author = {Your Name},
-  title = {AnyCap: A Unified Framework for Controllable Caption Generation},
+  author = {Yiming Ren, Zhiqiang Lin, Yu Li, Gao Meng, Weiyun Wang, Junjie Wang, Zicheng Lin, Jifeng Dai, Yujiu Yang, Wenhai Wang, and Ruihang Chu},
+  title = {AnyCap Project: A Unified Framework, Dataset, and Benchmark for Controllable Omni-modal Captioning},
   year = {2025},
   howpublished = {\url{https://github.com/qishisuren123/AnyCap}},
 }
