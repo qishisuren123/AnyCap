@@ -145,7 +145,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 </p>
 
 <p align="center">
-    🤗 <a href="https://huggingface.co/qishisuren/AnyCapModel">Model Weights</a> &nbsp;|&nbsp; 📊 <a href="https://huggingface.co/datasets/qishisuren/AnyCapEval">AnyCapEval Benchmark</a> &nbsp;|&nbsp; 📝 <a href="https://arxiv.org/abs/你的arxiv编号">Paper</a> &nbsp;|&nbsp; 📚 <a href="https://github.com/qishisuren123/AnyCap">Code</a>
+    🤗 <a href="https://huggingface.co/qishisuren/AnyCapModel">Model Weights</a> &nbsp;|&nbsp; 📊 <a href="https://huggingface.co/datasets/qishisuren/AnyCapEval">AnyCapEval Benchmark</a> &nbsp;|&nbsp; 📝 <a href="https://arxiv.org/abs/2507.12841">Paper</a> &nbsp;|&nbsp; 📚 <a href="https://github.com/qishisuren123/AnyCap">Code</a>
 </p>
 
 ---
@@ -305,11 +305,14 @@ We welcome contributions! Please open issues or submit PRs for feedback and impr
 ## 📝 Citation
 
 ```bibtex
-@misc{anycap2025,
-  author = {Yiming Ren, Zhiqiang Lin, Yu Li, Gao Meng, Weiyun Wang, Junjie Wang, Zicheng Lin, Jifeng Dai, Yujiu Yang, Wenhai Wang, and Ruihang Chu},
-  title = {AnyCap Project: A Unified Framework, Dataset, and Benchmark for Controllable Omni-modal Captioning},
-  year = {2025},
-  howpublished = {\url{https://github.com/qishisuren123/AnyCap}},
+@misc{ren2025anycapprojectunifiedframework,
+      title={AnyCap Project: A Unified Framework, Dataset, and Benchmark for Controllable Omni-modal Captioning}, 
+      author={Yiming Ren and Zhiqiang Lin and Yu Li and Gao Meng and Weiyun Wang and Junjie Wang and Zicheng Lin and Jifeng Dai and Yujiu Yang and Wenhai Wang and Ruihang Chu},
+      year={2025},
+      eprint={2507.12841},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2507.12841}, 
 }
 ```
 
