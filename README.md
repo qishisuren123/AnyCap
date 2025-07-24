@@ -305,14 +305,11 @@ We welcome contributions! Please open issues or submit PRs for feedback and impr
 ## 📝 Citation
 
 ```bibtex
-@misc{ren2025anycapprojectunifiedframework,
-      title={AnyCap Project: A Unified Framework, Dataset, and Benchmark for Controllable Omni-modal Captioning}, 
-      author={Yiming Ren and Zhiqiang Lin and Yu Li and Gao Meng and Weiyun Wang and Junjie Wang and Zicheng Lin and Jifeng Dai and Yujiu Yang and Wenhai Wang and Ruihang Chu},
-      year={2025},
-      eprint={2507.12841},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2507.12841}, 
+@article{ren2025anycap,
+  title={AnyCap Project: A Unified Framework, Dataset, and Benchmark for Controllable Omni-modal Captioning},
+  author={Ren, Yiming and Lin, Zhiqiang and Li, Yu and Meng, Gao and Wang, Weiyun and Wang, Junjie and Lin, Zicheng and Dai, Jifeng and Yang, Yujiu and Wang, Wenhai and others},
+  journal={arXiv preprint arXiv:2507.12841},
+  year={2025}
 }
 ```
 
